@@ -27,11 +27,11 @@ public class Catalogo {
 			if(userChoise <= 3 && userChoise>=1) {
 				System.out.print("Inserisci il nome del prodotto ");
 				String productName = in.next();
-				System.out.println("Inserisci il nome del brand del prodotto ");
+				System.out.print("Inserisci il nome del brand del prodotto ");
 				String productBrand = in.next();
-				System.out.println("Inserisci il prezzo del prodotto ");
+				System.out.print("Inserisci il prezzo del prodotto ");
 				double productPrice = in.nextDouble();
-				System.out.println("Inserisci l'IVA");
+				System.out.print("Inserisci l'IVA");
 				int productIva = in.nextInt();
 				
 				switch(userChoise) {
@@ -51,7 +51,7 @@ public class Catalogo {
 					break;
 				case 3:
 					System.out.print("Inserisci il colore delle cuffie ");
-					String headphonesColor = in.nextLine();
+					String headphonesColor = in.next();
 					System.out.print("Sono wireless? ");
 					boolean headphonesWireless = in.nextBoolean();
 					Prodotto headphones = new Cuffie(productName, productBrand, productPrice, productIva, headphonesColor , headphonesWireless );
@@ -68,8 +68,13 @@ public class Catalogo {
 			
 			
 		}while(userChoise!=4);
+		Prodotto[] convertedProductsList = new Prodotto[numOfProducts];
 		
-		System.out.println(Arrays.toString(productsList));
+		for(int i=0 ; i<numOfProducts ; i++) {
+			convertedProductsList[i] = productsList[i];
+		}
+		
+		System.out.println(Arrays.toString(convertedProductsList));
 		in.close();
 	}
 }

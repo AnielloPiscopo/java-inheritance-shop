@@ -31,7 +31,7 @@ public class Televisore extends Prodotto{
 	
 	@Override
 	public String toString() {
-		return super.ProductToString() + "\n" + getDimensions() + "inches \n" + isSmart();
+		return super.ProductToString() + "\nDimensioni: " + getDimensions() + "pollici\nSmart: " + isSmart();
 	}
 	
 }

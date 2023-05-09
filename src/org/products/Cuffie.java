@@ -32,7 +32,7 @@ public class Cuffie extends Prodotto {
 	
 	@Override
 	public String toString() {
-		return super.ProductToString() + "\n" + getColor() + "\n" + isWireless();
+		return super.ProductToString() + "\nColore: " + getColor() + "\nWireless: " + isWireless();
 	}
 	
 

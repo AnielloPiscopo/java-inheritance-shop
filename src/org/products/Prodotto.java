@@ -48,7 +48,7 @@ public class Prodotto {
 	
 	
 	
-	private void setCode() {
+	protected void setCode() {
 		Random rnd = new Random();
 		Integer rndNumber;
 		do {
@@ -76,10 +76,11 @@ public class Prodotto {
 	}
 	
 	protected String ProductToString() {
-		return "[" + getCode() + "]\n" 
-				+ getName()  
-			+ "\n" + getBrand() 
-			+ "\n" + String.format("%.2f", getPrice()) + "$ (" + getVat() + "%)"
+		return  "\n-----------------------------------------------------\n" 
+				+ "Codice: " + getCode() + "\n" + 
+				"Nome prodotto: " + getName()  
+			+ "\n" + "Nome brand: " + getBrand() 
+			+ "\n" + "Prezzo: " + String.format("%.2f", getPrice()) + "$ (" + getVat() + "%)"
 				+ " --> " + String.format("%.2f", getPriceWithVat()) + "$";
 	}
 	

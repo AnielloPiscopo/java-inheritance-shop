@@ -35,7 +35,7 @@ public class Smartphone extends Prodotto {
 	
 	@Override
 	public String toString() {
-		return super.ProductToString() + "\n" + getImei() + "\n" + getStorage() + "GB";
+		return super.ProductToString() + "\nCodice IMEI: " + getImei() + "\nSpazio di archiviazione: " + getStorage() + "GB";
 	}
 
 }
