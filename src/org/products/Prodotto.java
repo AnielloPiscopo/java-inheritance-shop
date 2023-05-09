@@ -1,4 +1,4 @@
-package org.java;
+package org.products;
 
 import java.util.Random;
 
@@ -50,7 +50,11 @@ public class Prodotto {
 	
 	private void setCode() {
 		Random rnd = new Random();
-		this.code = rnd.nextInt();
+		Integer rndNumber;
+		do {
+			rndNumber = rnd.nextInt();
+			this.code = rndNumber;
+		}while(rndNumber<=0);
 	}
 	
 	public void setName(String name) {
@@ -70,14 +74,18 @@ public class Prodotto {
 	public void setVat(Integer vat) {
 		this.vat = vat;
 	}
-
-	public String toString() {
-		
+	
+	protected String ProductToString() {
 		return "[" + getCode() + "]\n" 
 				+ getName()  
 			+ "\n" + getBrand() 
 			+ "\n" + String.format("%.2f", getPrice()) + "$ (" + getVat() + "%)"
 				+ " --> " + String.format("%.2f", getPriceWithVat()) + "$";
+	}
+	
+
+	public String toString() {
+		return ProductToString();
 	}
 	
 }
